@@ -6,6 +6,8 @@ Card::Card(int naipe, int valor){
     this->valor = valor;
 }
 
+Card::Card(){};
+
 string Card::converteString(int v){
     ostringstream auxiliarValor;
     auxiliarValor << v;
@@ -30,6 +32,10 @@ string Card::toString(){
             break;
         default:
             cout << "Numero invalido!" << endl;
+    }
+    if(this->valor == 0){
+        carta = "NULL";
+        return carta;
     }
     carta = resultadoNaipe + converteString(this->valor);
     return carta;

@@ -12,6 +12,7 @@ class Card{
         int naipe, valor;
     public:
         Card(int naipe, int valor);
+        Card();
         string toString();
         string converteString(int naipe);
 };
