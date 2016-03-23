@@ -1,5 +1,7 @@
 #include <iostream>
 #include <cmath>
+#include <time.h>
+#include <stdlib.h>
 #include "card.h"
 #include "deck.h"
 
@@ -7,6 +9,9 @@ using namespace std;
 
 int main()
 {
+    srand(time(NULL));
+
+    cout << " Teste 2-Display " << endl;
     Card c0(0,1);
     Card c1(1,10);
     Card c2(2,11);
@@ -14,12 +19,16 @@ int main()
     cout << "" << c0.toString() << " " << c1.toString() << " " << c2.toString() << " " << c3.toString();
 
     cout << endl;
+    cout << endl;
 
+    cout << " Teste 5-Display " << endl;
     Deck d;
     cout << d.toString() << endl;
 
     cout << endl;
+    cout << endl;
 
+    cout << " Teste 6-Pegando uma carta " << endl;
     //Observar o limite do for - Teste Draw
     cout << "Drawn cards: " << endl;
     for (int i=0; i<53; i++){
@@ -30,24 +39,36 @@ int main()
     cout << endl;
     cout << endl;
 
-    //[INICIO] Código binomial professor
-    double sum = 0;
-
-    for(int i = 0; i < 52; i++){
-        double num = 1;
-        double denom = 1;
-        double mult;
-        for(int j=0; j <= i; j++){
-            num *= (52-j);
-            denom *= (j+1);
-            mult = num/denom;
-        }
-        mult /= pow(2,52);
-        cout << "probabilidade: " << i << " " << mult << endl;
-        sum += mult;
+    cout << " Teste 9-Cortando o Baralho " << endl;
+    int c[3] = {0,26,52};
+    for (int i=0; i<3; i++){
+        cout << "Cut = " << c[i] << endl;
+        Deck d;
+        Deck l = d.split(d.cl, c[i]);
+        cout << "First heap: " << l.toString() << " " << endl;
+        cout << "Second heap: " << d.toString() << " " << endl;;
     }
-    cout << "Prob final: " << sum << endl;
-    //[FIM]
+
+    cout << endl;
+    cout << endl;
+
+    cout << " Teste 10-Riffle " << endl;
+    Deck d1;
+    Deck l = d1.split(d1.cl, 26);
+    cout << "First heap: " << l.toString() << endl;
+    cout << "Second heap: " << d1.toString() << endl;
+    cout<< "Riffle result: " << d1.riffle(l.cl, d1.cl).toString() << endl;
+
+    cout << endl;
+    cout << endl;
+
+    //Verificar esse teste
+    cout << " Teste 11-Combinar Tudo " << endl;
+    Deck d3;
+    cout << d3.toString() << endl;
+    cout << d3.riffleShuffle(7).toString() << endl;
+    cout << endl;
+    cout << d3.toString() << endl;
 
     return 0;
 }

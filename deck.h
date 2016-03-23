@@ -12,12 +12,16 @@ using namespace std;
 
 class Deck{
     private:
-        list<Card> c1;
+
     public:
+        list<Card> cl;
         Deck();
+        Deck(bool vazio);
         string toString();
         Card draw();
-        int fatorial(int n);
         int cut(int n);
+        Deck split(list<Card> l, int c);
+        Deck riffle(list<Card> l1, list<Card> l2);
+        void riffleShuffle(int n);
 };
 #endif // DECK_H
