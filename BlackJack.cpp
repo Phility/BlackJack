@@ -39,10 +39,14 @@ list<Card> BlackJack::humanPlayer(Deck d){
             if(getScore(player.cl) > 21){
                 cout << "You lost, your score is above 21" << endl;
             }
+            if(auxiliar == 's'){
+                computerPlayer(d, humanScore);
+            }
     }while(auxiliar != 's' && getScore(player.cl) < 21);
+    
     return player.cl;
 }
 
 list<Card> BlackJack::computerPlayer(Deck d, int humanScore){
-
+    
 }
