@@ -14,5 +14,6 @@ class BlackJack{
         char getCommand();
         list<Card> humanPlayer(Deck d);
         list<Card> computerPlayer(Deck d, int humanScore);
+        void game();
 };
 #endif // BLACKJACK_H
