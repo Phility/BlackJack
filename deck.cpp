@@ -66,7 +66,7 @@ Deck Deck::riffle(list<Card> l1, list<Card> l2){
 void Deck::riffleShuffle(int n){
     for(int i = 0; i < n; i++){
         cut(52);
-        Deck deckAuxiliar;
+        Deck deckAuxiliar(true);
         deckAuxiliar = split(cl, cut(52));
         cl = riffle(cl, deckAuxiliar.cl).cl;
     }

@@ -15,5 +15,6 @@ class Card{
         Card();
         string toString();
         string converteString(int naipe);
+        int getValor();
 };
 #endif // CARD_H

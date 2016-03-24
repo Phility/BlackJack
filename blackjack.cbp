@@ -34,6 +34,8 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="BlackJack.cpp" />
+		<Unit filename="BlackJack.h" />
 		<Unit filename="card.cpp" />
 		<Unit filename="card.h" />
 		<Unit filename="deck.cpp" />

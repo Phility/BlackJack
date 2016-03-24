@@ -40,3 +40,7 @@ string Card::toString(){
     carta = resultadoNaipe + converteString(this->valor);
     return carta;
 }
+
+int Card::getValor(){
+    return this->valor;
+}
